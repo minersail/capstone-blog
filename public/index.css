@@ -1,0 +1,195 @@
+* {
+	box-sizing: border-box;
+	font-family: "Roboto", monospace;
+}
+
+body {
+	margin: 0;
+}
+
+a {
+	font-weight: bold;
+	color: black;
+	text-decoration: none;
+}
+
+table {	
+	border: 1px solid black;
+	border-collapse: collapse;
+	border-spacing: 10px;
+
+	width: 50%;
+}
+
+td {
+	border: 1px solid black;
+	padding: 5px;
+}
+
+td img {
+	height: 200px;
+}
+
+.block {
+	display: block;
+}
+
+.menu-container {
+	left: calc(50% - 50px);
+	top: 25px;
+	position: absolute;
+}
+
+.menu-container * {
+	font-family: "Major Mono Display", monospace;
+	text-align: center;
+
+	border-radius: 100%;
+	position: absolute;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	cursor: pointer;
+	user-select: none;
+}
+
+.menu-button {
+	width: 100px;
+	height: 100px;
+
+	left: 0px;
+	top: 0px;
+
+	transition: left 1s, top 1s;	
+}
+
+#toggle-button {
+	width: 102px;
+	height: 102px;
+	background-color: #FCEADE;
+
+	font-size: 80px;
+
+	left: -1px;
+	top: -1px;
+}
+
+#toggle-button span {
+	display: inline;
+	
+	position: relative;
+
+	animation: pulse 3s cubic-bezier(.20,2,.80,-1) 0s infinite;
+}
+
+.but1 {
+	border: 1px solid black;
+}
+
+.but2 {
+	background-color: #FF8A5B;
+}
+
+.but3 {
+	background-color: #25CED1;
+}
+
+.but4 {
+	background-color: #EA526F;
+}
+
+.header {
+	width: 100%;
+	height: 150px;	
+}
+
+.title {
+	height: 100%;
+	width: 40%;
+
+	font-size: 40px;
+	font-family: "Major Mono Display", monospace;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#container {
+	height: calc(100% - 150px);
+	background-color: #EFEFEF;
+
+	background: url("https://hdqwalls.com/wallpapers/limbo-game-minimalism-wallpaper.jpg");
+	background-size: auto 100%;
+	background-position: center bottom;
+
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.back {
+	width: 100px;
+	height: 100px;
+
+	background-color: #A2C7E5;
+	color: #58FCEC;
+	font-size: 40px;
+
+	position: absolute;
+	left: 25px;
+	top: calc(50% - 50px);
+
+	border-radius: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	transition: transform 1s;
+}
+
+.back:hover {
+	transform: rotate(360deg);
+	user-select: none;
+}
+
+@media (max-width: 768px) { 
+	.header {
+		height: 250px;	
+	}
+
+	.title {
+		height: 50%;
+		width: 100%;
+	}
+
+	.menu-container {
+		top: 125px;
+	}
+
+	#container {
+		height: calc(100% - 250px);
+	}
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(.6);
+	}
+
+	30% {
+		transform: scale(1);
+		animation-timing-function: ease-out;
+	}
+
+	50% {
+		transform: scale(.6);
+	}
+
+	100% {
+		transform: scale(.6);
+	}
+}
