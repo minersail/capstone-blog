@@ -21,17 +21,13 @@ table {
 	width: 50%;
 }
 
-td {
-	border: 1px solid black;
-	padding: 5px;
+.blog {
+	text-align: center;
+	margin-bottom: 30%;
 }
 
-td img {
-	height: 200px;
-}
-
-.block {
-	display: block;
+.blog img {
+    width: 60%;
 }
 
 .menu-container {
@@ -118,12 +114,12 @@ td img {
 }
 
 #container {
-	height: calc(100% - 150px);
-	background-color: #EFEFEF;
+	min-height: calc(100% - 150px);
 
 	background: url("https://hdqwalls.com/wallpapers/limbo-game-minimalism-wallpaper.jpg");
-	background-size: auto 100%;
+	background-size: 100% auto;
 	background-position: center bottom;
+	background-repeat: no-repeat;
 
 	display: flex;
 	justify-content: center;
@@ -171,7 +167,7 @@ td img {
 	}
 
 	#container {
-		height: calc(100% - 250px);
+		min-height: calc(100% - 250px);
 	}
 }
 
