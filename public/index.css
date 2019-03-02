@@ -28,6 +28,10 @@ table {
 	margin-bottom: 30%;
 }
 
+.blog img {
+	width: 100%;
+}
+
 .menu-container {
 	left: calc(50% - 50px);
 	top: 25px;
