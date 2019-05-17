@@ -1,3 +1,10 @@
+:root {
+	--accent1: #565554;
+	--accent2: #BBDEF0;
+	--accent3: #3C1518;
+	--accent4: #69140E;
+}
+
 * {
 	box-sizing: border-box;
 	font-family: "Roboto", monospace;
@@ -13,23 +20,46 @@ a {
 	text-decoration: none;
 }
 
-table {	
-	border: 1px solid black;
-	border-collapse: collapse;
-	border-spacing: 10px;
-
-	width: 50%;
-}
-
 .blog {
+	position: relative;
+
 	width: 60%;
 
 	margin: auto;
 	margin-bottom: 30%;
+	margin-top: 150px;
+}
+
+.blog h2 {
+	background-color: var(--accent1);
+	color: white;
+
+	width: 120%;
+	padding: 25px;
+
+	box-shadow: 0px 3px 6px #565554;
+
+	/* margin-top: 100px; */
+}
+
+.blog > div {
+	max-height: 0px;
+
+	overflow: hidden;
+
+	transition: max-height 1s;
 }
 
 .blog img {
+	height: 150px;
+}
+
+.blog img:hover {
+	position: absolute;
+
 	width: 100%;
+	height: auto;
+	left: 0;
 }
 
 .menu-container {
@@ -49,6 +79,7 @@ table {
 	justify-content: center;
 	align-items: center;
 
+	z-index: 2;
 	cursor: pointer;
 	user-select: none;
 }
@@ -63,10 +94,49 @@ table {
 	transition: left 1s, top 1s;	
 }
 
+.home-container {	
+	margin: 150px 0px;
+	background: #555555CC;
+
+	width: 70%;
+	min-width: 400px;
+
+	display: flex;
+	flex-direction: row;
+
+	justify-content: space-around;
+	align-items: center;
+	
+	box-shadow: 0px 3px 6px #565554;
+}
+
+.home-abstract {
+	padding: 50px;
+	width: 60%;
+}
+
+.home-abstract h1, .home-abstract h3 {
+	color: white;
+}
+
+.home-abstract h3 {
+	font-weight: normal;
+}
+
+.home-abstract p {
+	color: #CDCDCD;
+}
+
+.home-abstract h1 {
+	font-size: 40px;
+}
+
 #toggle-button {
+	z-index: 2;
+
 	width: 102px;
 	height: 102px;
-	background-color: #FCEADE;
+	background-color: var(--accent1);
 
 	font-size: 80px;
 
@@ -82,25 +152,32 @@ table {
 	animation: pulse 3s cubic-bezier(.20,2,.80,-1) 0s infinite;
 }
 
+.but2, .but3 {
+	color: white;
+}
+
 .but1 {
 	border: 1px solid black;
 }
 
 .but2 {
-	background-color: #FF8A5B;
+	background-color: var(--accent3);
 }
 
 .but3 {
-	background-color: #25CED1;
+	background-color: var(--accent4);
 }
 
 .but4 {
-	background-color: #EA526F;
+	background-color: var(--accent2);
 }
 
 .header {
 	width: 100%;
-	height: 150px;	
+	height: 150px;
+
+	position: relative;
+	z-index: 1;
 }
 
 .title {
@@ -116,9 +193,14 @@ table {
 }
 
 #container {
-	min-height: calc(100% - 150px);
+	position: absolute;
+	min-height: 100%;
+	width: 100%;
+	top: 0;
+	/* min-height: calc(100% - 150px); */
 
-	background: url("https://hdqwalls.com/wallpapers/limbo-game-minimalism-wallpaper.jpg");
+	/* background: url("https://hdqwalls.com/wallpapers/limbo-game-minimalism-wallpaper.jpg"); */
+	background: url("jeep.svg");
 	background-size: 100% auto;
 	background-position: center bottom;
 	background-repeat: no-repeat;
@@ -128,17 +210,15 @@ table {
 	align-items: flex-start;
 }
 
-.back {
+.play {
 	width: 100px;
 	height: 100px;
 
-	background-color: #A2C7E5;
-	color: #58FCEC;
-	font-size: 40px;
+	background-color: var(--accent2);
+	color: var(--accent1);
+	font-size: 32px;
 
-	position: absolute;
-	left: 25px;
-	top: calc(50% - 50px);
+	margin-right: 100px;
 
 	border-radius: 100%;
 
@@ -149,9 +229,39 @@ table {
 	transition: transform 1s;
 }
 
-.back:hover {
+.play:hover {
 	transform: rotate(360deg);
 	user-select: none;
+}
+
+.abtme-container {
+	margin-top: 150px;
+	background: #555555CC;
+
+	width: 50%;
+	min-width: 400px;
+
+	display: flex;
+	flex-direction: row;
+
+	justify-content: space-between;
+	align-items: flex-end;
+	
+	box-shadow: 0px 3px 6px #565554;
+}
+
+.abtme-container img {
+	width: 25%;
+	min-width: 200px;
+	height: auto;
+}
+
+.abtme-container div {
+	padding: 50px;
+}
+
+.abtme-container p {
+	color: white;
 }
 
 @media (max-width: 768px) { 
@@ -168,9 +278,14 @@ table {
 		top: 125px;
 	}
 
-	#container {
-		min-height: calc(100% - 250px);
+	.abtme-container {
+		margin-top: 300px;
+		width: 100%;
 	}
+
+	/* #container {
+		min-height: calc(100% - 250px);
+	} */
 }
 
 @keyframes pulse {
@@ -190,4 +305,39 @@ table {
 	100% {
 		transform: scale(.6);
 	}
+}
+
+.fair-container {
+	margin-top: 150px;
+	background: #555555CC;
+
+	width: 80%;
+	min-width: 400px;
+	padding: 25px;
+
+	display: grid;
+	grid-template: 70% 30% / 25% 25% 25% 25%;
+	
+	box-shadow: 0px 3px 6px #565554;
+
+	position: relative;
+}
+
+.fair-container p {
+	grid-area: 1 / 2 / 2 / 5;
+	padding: 15px;
+	color: white;
+}
+
+.fair-container img:first-of-type {
+	grid-area: 1 / 1 / 3 / 2;
+}
+
+.fair-container img {
+	width: 100%;
+	padding: 10px;
+}
+
+.fair-container img:not(:first-of-type):hover {
+	position: absolute;
 }

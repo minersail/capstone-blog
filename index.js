@@ -16,6 +16,10 @@ app.get('/blog', function(request, response) {
   response.sendFile("blog.html", {root: __dirname + "/views/" })
 })
 
+app.get('/capstonefair', function(request, response) {
+  response.sendFile("capstonefair.html", {root: __dirname + "/views/" })
+})
+
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'))
 })

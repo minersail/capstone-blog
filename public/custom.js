@@ -23,3 +23,18 @@ function toggleMenu() {
 
 	toggled = !toggled;
 }
+
+window.onload = function() {
+	if (document.getElementsByClassName("blog").length === 0) {
+		return;
+	}
+
+	for (const header of document.getElementsByClassName("blog")[0].getElementsByTagName("h2")) {
+		header.onclick = function() {
+			console.log(header.nextElementSibling.style.maxHeight);
+			header.nextElementSibling.style.maxHeight = 
+				header.nextElementSibling.style.maxHeight === "0px" || header.nextElementSibling.style.maxHeight === ""
+				? 2000 : 0;
+		}
+	}
+}
